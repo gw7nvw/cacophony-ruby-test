@@ -13,6 +13,9 @@
 #log files
 *.log
 
+#pg password
+.pgpass
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
