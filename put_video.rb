@@ -11,7 +11,7 @@ end
 def put_videos(animal, format)
   if format=='mp4' then typestr='audio' else typestr='thermalRaw' end
 
-  token=api_login("mbriggs","cacDog3l!fe","test")
+  token=api_login("#{USERNAME}","#{PASSWORD}","test")
 
   group=check_group(token,'video-test')
   if !group then group=create_group(token,'video-test') end
@@ -29,7 +29,7 @@ def put_videos(animal, format)
 end
 
 def clear_videos(server)
-  token=api_login("mbriggs","cacDog3l!fe",server)
+  token=api_login("#{USERNAME}","#{PASSWORD}",server)
   group=check_group(token,'video-test')
   res=delete_recordings(token,group)
   true
@@ -37,7 +37,7 @@ end
 
 def check_videos(animal,baseline_file, output_file,compare_ai)
   if !compare_ai or compare_ai=="" then compare_ai="Master" end
-  token=api_login("mbriggs","cacDog3l!fe","test")
+  token=api_login("#{USERNAME}","#{PASSWORD}","test")
   missedCount=0
   if baseline_file then
     base_res_str=File.read(baseline_file)

@@ -1,4 +1,4 @@
-require '/home/mbriggs/cacophony/testing/test-harness/api_tools.rb'
+require '/home/#{USERNAME}/cacophony/testing/test-harness/api_tools.rb'
 
 def get_recordings(animal, type)
     idfile=animal+".list"
@@ -20,7 +20,7 @@ end
 
 def get_recording(type,id,label)
   if label==nil  then label="" end
-  token=api_login("mbriggs","cacDog3l!fe", "prod")
+  token=api_login("#{USERNAME}","#{PASSWORD}", "prod")
     file=api_v1_recording_get(token,id)
     if type=="mp4" then
       filetoken=JSON.parse(file)["downloadFileJWT"]
